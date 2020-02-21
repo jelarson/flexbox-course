@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox Capstone</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/23912d8913.js"></script>
+
+
+  <style>
+    html {
+      font-family: 'oxygen', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: maroon;
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      align-items: center;
+    }
+
+    .header a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .left-column {
+      display: flex;
+      width: 25vw;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+      visibility: hidden;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-around;
+    }
+
+
+    .my-name {
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      padding-right: 59px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .right-column {
+      display: flex;
+      align-items: center;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      padding-right: 12px;
+      height: 40px;
+      background-color: black;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .link:hover {
+      background-color: #415068;
+      cursor: pointer;
+    }
+
+    .right-column:hover {
+      background-color: #415068;
+      cursor: pointer;
+    }
+
+    .item.left-column {
+      flex: auto;
+    }
+
+    .item.right-column {
+      flex: inherit;
+    }
+
+    @media (max-width: 615px) {
+      .icon {
+        visibility: visible;
+      }
+
+      .link {
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="header">
+    <div class="left-column">
+      <div class="icon">
+        <a href="#"><i class="fas fa-bars"></i></a>
+      </div>
+      <div class="my-name">
+        <a>Jess Larson</a>
+      </div>
+
+      <div class="links">
+        <div class="link">
+          <a href="#">Link 1</a>
+        </div>
+        <div class="link">
+          <a href="#">Link 2</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="link">
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+<!-- Jordan's Code -->
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+
+  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+    integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
+
+  <style>
+    html {
+      font-family: 'Oxygen', sans-serif;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    .navbar {
+      background: #415068;
+    }
+
+    .navbar div {
+      display: none;
+    }
+
+    .navbar .toggle,
+    .navbar .brand {
+      display: inline-block;
+    }
+
+    .navbar .link {
+      display: block;
+      text-align: center;
+      padding: 1em;
+      text-decoration: none;
+      background: #223047;
+      color: white;
+    }
+
+    .navbar .link:hover,
+    .navbar .link:active {
+      color: #223047;
+      background: white;
+    }
+
+    .navbar .brand {
+      width: 10em;
+      text-align: center;
+      padding: 1em;
+      color: white;
+    }
+
+    .navbar a {
+      text-decoration: none;
+    }
+
+    .navbar .toggle {
+      padding: 1em;
+      color: black;
+    }
+
+    @media (min-width: 48em) {
+      .navbar {
+        display: flex;
+      }
+
+      .navbar .left,
+      .navbar .right {
+        display: flex;
+        flex: 1;
+      }
+
+      .navbar .link {
+        width: auto;
+      }
+
+      .navbar .right {
+        justify-content: flex-end;
+      }
+
+      .navbar .toggle {
+        display: none;
+      }
+    }
+
+    @media (min-width: 48em) {
+      .navbar div {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 48em) {
+      .navbar.active .toggle {
+        background: #223047;
+        color: white;
+      }
+
+      .navbar .brand {
+        text-align: left;
+      }
+
+      .navbar.active div {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="#" class="toggle" id="navHamburger">
+      <i class="fas fa-bars"></i>
+    </a>
+    <a href="#" class="brand">MyName</a>
+    <div class="left">
+      <a href="#" class="link">Link 1</a>
+      <a href="#" class="link">Link 2</a>
+    </div>
+    <div class="right">
+      <a href="#" class="link">Link 3</a>
+    </div>
+  </div>
+</body>
+
+<script>
+  const navHamburger = document.querySelector('#navHamburger');
+  navHamburger.addEventListener('click', (e) => {
+    navHamburger.parentElement.classList.toggle('active');
+  })
+</script>
+
+</html>
